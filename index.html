@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página interactiva con botones</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            margin: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #resultado {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Página interactiva con botones</h1>
+
+    <button onclick="mostrarMensaje()">Mostrar mensaje</button>
+    <button onclick="cambiarColor()">Cambiar color de fondo</button>
+    <button onclick="mostrarHora()">Mostrar hora actual</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        function mostrarMensaje() {
+            document.getElementById('resultado').innerHTML = "¡Hola! Has hecho clic en el botón de mensaje.";
+        }
+
+        function cambiarColor() {
+            const colores = ['#FF5733', '#33FFBD', '#337BFF', '#FF33A8', '#FFC300'];
+            const colorAleatorio = colores[Math.floor(Math.random() * colores.length)];
+            document.body.style.backgroundColor = colorAleatorio;
+        }
+
+        function mostrarHora() {
+            const horaActual = new Date().toLocaleTimeString();
+            document.getElementById('resultado').innerHTML = "La hora actual es: " + horaActual;
+        }
+    </script>
+
+</body>
+</html>
